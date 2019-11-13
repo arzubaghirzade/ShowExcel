@@ -1,0 +1,18 @@
+<div class="control-section ">
+  <h1 class="head_text text-center">Show Excel</h1>
+    <div class="control_wrapper">
+      <ejs-uploader  #defaultupload id=defaultfileupload [dropArea]='dropElement' (selected)='onFileRemove($event)' (change)="onSuccess($event)"></ejs-uploader>
+    </div>
+</div>
+
+<div class="container" *ngIf="headerData.length">
+<ag-grid-angular
+  style="height: 600px;"
+  class="ag-theme-balham"
+  [rowData]="headerData"
+  [enableSorting]="true"
+  [enableFilter]="true"
+  [pagination]="true"
+  [columnDefs]="headers">
+</ag-grid-angular>
+</div>
